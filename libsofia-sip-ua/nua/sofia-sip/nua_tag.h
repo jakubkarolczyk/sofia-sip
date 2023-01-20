@@ -173,6 +173,7 @@ SOFIAPUBVAR tag_typedef_t nutag_min_se_ref;
 /** Enumeration type of NUTAG_SESSION_REFRESHER(). */
 enum nua_session_refresher {
   nua_no_refresher,		/**< Disable session timer. */
+  nua_bypass_refresher,		/**< Refresher in bypass media mode */
   nua_local_refresher,		/**< Session refresh by local end. */
   nua_remote_refresher,		/**< Session refresh by remote end. */
   nua_any_refresher		/**< No preference (default). */

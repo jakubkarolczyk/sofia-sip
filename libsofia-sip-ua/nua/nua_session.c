@@ -4464,7 +4464,11 @@ session_timer_add_headers(struct session_timer *t,
     min = t->remote.min_se;
 
   if (uas) {
-    session_timer_negotiate(t, uas = 1);
+    if (NH_PGET(nh, refresher) == nua_bypass_refresher) {
+      session_timer_negotiate(t, 0);
+    } else {
+      session_timer_negotiate(t, uas = 1);
+    }
 
     refresher = t->refresher;
     expires = t->interval;
